@@ -1,12 +1,4 @@
-"""
-KAIROS backend — Google OAuth2 (Authorization Code flow).
 
-Per the assignment, no session/database layer is required: the backend's
-only job is to broker the OAuth2 handshake with Google and hand the
-resulting profile back to the frontend as plain query parameters. State is
-kept in a short-lived in-memory dict just to carry the frontend's return
-URL across the redirect to Google and back — nothing is persisted.
-"""
 from __future__ import annotations
 
 import os
