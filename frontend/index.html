@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAIROS — From the Field of All Possibility</title>
+  <meta name="description" content="KAIROS online banking — from the field of all possibility." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=Bruno+Ace&display=swap" rel="stylesheet" />
+  <script type="module" src="/src/main.ts"></script>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#hero" aria-label="KAIROS home">
+        <img src="/assets/kairos-logo.png" alt="KAIROS" class="logo-img" />
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+
+      <button class="burger" id="burger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-top">
+      <img src="/assets/kairos-logo.png" alt="KAIROS" class="logo-img" />
+      <button class="close-btn" id="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav aria-label="Mobile primary">
+      <a href="#hero">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </div>
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-video-wrap">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="/assets/hero-poster.jpg"
+        >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>From the<br />field of all<br />possibility</h1>
+          <p>
+            This is an emergent space where ideas are not created, but carefully discovered.
+            We navigate the vast potential to bring forth only the most resonant patterns and
+            coherent forms. Here, the future is curated from the infinite.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="learn-more-btn">
+              Learn More <span class="btn-arrow">&rarr;</span>
+            </button>
+            <button class="btn btn-outline" id="play-video-btn">
+              Play Video <span class="btn-play">&#9654;</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-card" id="auth-card">
+          <h2 class="auth-card-title">Online Banking</h2>
+          <div class="auth-tabs" role="tablist">
+            <button class="auth-tab is-active" role="tab" aria-selected="true" data-tab="signin">Sign In</button>
+            <button class="auth-tab" role="tab" aria-selected="false" data-tab="email">Enter Email</button>
+          </div>
+          <div class="auth-body">
+            <div class="auth-user" id="auth-user" hidden>
+              <img id="auth-user-avatar" alt="" class="auth-user-avatar" />
+              <div>
+                <p class="auth-user-name" id="auth-user-name"></p>
+                <p class="auth-user-email" id="auth-user-email"></p>
+              </div>
+              <button class="link-btn" id="sign-out-btn">Sign out</button>
+            </div>
+
+            <div id="auth-signin">
+              <button class="btn btn-google" id="google-signin-btn" type="button">
+                <svg class="google-icon" viewBox="0 0 18 18" aria-hidden="true">
+                  <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92C16.66 14.2 17.64 11.9 17.64 9.2z"/>
+                  <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.19l-2.92-2.26c-.81.55-1.85.87-3.04.87-2.34 0-4.32-1.58-5.03-3.7H.94v2.33A9 9 0 0 0 9 18z"/>
+                  <path fill="#FBBC05" d="M3.97 10.72A5.4 5.4 0 0 1 3.68 9c0-.6.1-1.18.29-1.72V4.95H.94A9 9 0 0 0 0 9c0 1.45.35 2.83.94 4.05l3.03-2.33z"/>
+                  <path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .94 4.95l3.03 2.33C4.68 5.16 6.66 3.58 9 3.58z"/>
+                </svg>
+                Google
+              </button>
+              <p class="auth-hint">Start your journey now!</p>
+              <div class="auth-divider"><span>or</span></div>
+              <button class="btn btn-ghost" id="create-account-btn" type="button">Create account</button>
+            </div>
+
+            <div id="auth-email" hidden>
+              <input class="auth-input" id="email-input" type="email" placeholder="Enter Email" autocomplete="email" />
+              <button class="btn btn-google" id="email-signin-btn" type="button">Sign in with email</button>
+              <p class="auth-hint">Start Your Journey Now!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker-section" id="projects" aria-label="Live cryptocurrency rates">
+      <div class="orbit" aria-hidden="true">
+        <img src="/assets/orbit-glow-outer.png" alt="" class="orbit-glow orbit-glow-outer" />
+        <img src="/assets/orbit-glow-mid.png" alt="" class="orbit-glow orbit-glow-mid" />
+        <img src="/assets/orbit-glow-inner.png" alt="" class="orbit-glow orbit-glow-inner" />
+      </div>
+
+      <div class="ticker-center">
+        <p class="ticker-eyebrow">Online Banking</p>
+        <div class="add-coin-wrap">
+          <button class="btn btn-add-coin" id="add-coin-btn" type="button" aria-expanded="false" aria-controls="add-coin-menu">
+            Add a Cryptocurrency <span class="chevron">&rsaquo;</span>
+          </button>
+          <ul class="add-coin-menu" id="add-coin-menu" hidden>
+            <li>USD Coin</li>
+            <li>Binance Coin</li>
+            <li>Tether</li>
+            <li>Solana</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="coin-list coin-list-left" id="coin-list-left"></ul>
+      <ul class="coin-list coin-list-right" id="coin-list-right"></ul>
+
+      <img src="/assets/ticker-wire-top.png" alt="" class="ticker-wire ticker-wire-top" />
+      <img src="/assets/ticker-wire-bottom.png" alt="" class="ticker-wire ticker-wire-bottom" />
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          KAIROS is a digital banking concept built for a hiring test assignment — a small,
+          focused product surface exploring live market data, motion, and identity through
+          a single-page experience.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>This section is a placeholder per the design brief. Reach out via the repository issues.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="logo">KAIROS</span>
+      <p>&copy; 2026 KAIROS. Test assignment build.</p>
+    </div>
+  </footer>
+
+  <!-- Play Video modal -->
+  <div class="modal" id="video-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel modal-panel-video" role="dialog" aria-modal="true" aria-label="Promo video">
+      <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
+      <video id="modal-video" controls playsinline>
+        <source src="/assets/hero-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <!-- Learn More modal -->
+  <div class="modal" id="learn-more-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel modal-panel-text" role="dialog" aria-modal="true" aria-label="Learn more">
+      <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
+      <h3>The digital bridge between reality and tomorrow</h3>
+      <p>
+        When you turn on your smart alarm clock in the morning of 2026, it already knows you
+        slept seventeen minutes less than usual. The algorithm picks a morning playlist based
+        on your heart rate and the current moon phase. Your voice assistant, trained on
+        thousands of previous conversations, doesn't just say "good morning" — it reminds you:
+        "Don't forget to pick up your package from the drone post before 10:30 AM." You step up
+        to the mirror, and instead of your reflection, you see graphs of your hydration levels,
+        your daily schedule, and a suggestion: "You might want to take extra vitamin D — it's
+        going to be cloudy today."
+      </p>
+      <p>
+        In the evening, you activate "dark matter" mode at home: the lights dim gradually,
+        following your movement; the Wi-Fi reallocates bandwidth to stream a movie in 32K; and
+        the lounge chair warms up exactly the spot on your back that got tired from sitting. On
+        screen — not just a film: a generative neural network adjusts the subtitles, replaces
+        store signs with brands you recognize, and even redubs the actors if you whisper a
+        request.
+      </p>
+      <p>
+        This is the promise KAIROS is built on — a bridge between where you are, and where
+        things are quietly heading.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
